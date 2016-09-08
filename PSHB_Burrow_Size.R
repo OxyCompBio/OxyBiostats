@@ -4,12 +4,16 @@
 #Purpose: Learn how to calculate means and standard deviation using a simulated dataset comparing mean lengths of beetle larvae burrows for the Polyphagous Shot Hole Borer (PSHB) and the Goldspotted Oak Borer (GSOB)
 
 #Load R Packages
+#if you do not have these packages installed already, run the next three lines first:
+#install.packages("ggplot2")
+#install.packages("plyr")
+#install.packages("RCurl")
+
 library(ggplot2)
 library(plyr)
 library(RCurl)
 
 #Open Data File
-#PSHB <- read.table("~/Google Drive/Teaching/Bio 268/Fall 2016/Lectures/PSHB Burrow Size.csv", sep=",", header=T)
 urlPSHB <- getURL("https://raw.githubusercontent.com/OxyCompBio/OxyBiostats/master/PSHB_Burrow_Size.csv")
 PSHB <- read.csv(text = urlPSHB)
 
